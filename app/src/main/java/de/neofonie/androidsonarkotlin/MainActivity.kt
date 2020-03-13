@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
     logic = BusinessLogic()
+    print("just to test jenkins launch after push")
   }
 
   override fun onStart() {
