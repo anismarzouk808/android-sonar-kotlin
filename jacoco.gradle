@@ -63,7 +63,7 @@ task jacocoTestReport(type: JacocoReport, dependsOn: "testDebugUnitTest") {
     csv.destination file("${buildDir}/reports/jacocoTestReport.csv")
   }
 
-  getSourceDirectories().setFrom([mainSrc])
-  getClassDirectories().setFrom([debugTree], [kotlinDebugTree])
-  getExecutionData().setFrom(dir: buildDir, includes: ['**/*.exec', '**/*.ec'])
+  sourceDirectories = files([mainSrc])
+  classDirectories = files([debugTree], [kotlinDebugTree])
+  executionData = fileTree(dir: buildDir, includes: ['**/*.exec', '**/*.ec'])
 }
